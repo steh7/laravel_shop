@@ -5,9 +5,9 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 // Rota inicial
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // // Rotas de Login (Para usuários não autenticados)
 // Route::middleware('guest')->group(function () {
