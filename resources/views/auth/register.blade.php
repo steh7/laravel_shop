@@ -9,22 +9,22 @@
 <body>
 
     <!-- Formulário de Cadastro -->
-    <form class="form">
+    <form class="form" action="{{ route('register.store') }}" method="POST">
+        @csrf
         <p class="form-title">Crie sua conta</p>
-        
         <!-- Nome -->
         <div class="input-container">
-            <input type="text" placeholder="Digite seu nome" required>
+            <input type="text" name="name" placeholder="Digite seu nome" required>
         </div>
 
         <!-- E-mail -->
         <div class="input-container">
-            <input type="email" placeholder="Digite seu e-mail" required>
+            <input type="email" name="email" placeholder="Digite seu e-mail" required>
         </div>
 
         <!-- Senha -->
         <div class="input-container">
-            <input type="password" placeholder="Digite sua senha" required>
+            <input type="password" name="password" placeholder="Digite sua senha" required>
         </div>
 
         <!-- Confirmar senha -->
@@ -43,6 +43,10 @@
             <a href="{{ route('login') }}">Entrar</a> <!-- Redireciona para a página de login -->
         </p>
     </form>
+
+    @if(session()->has('message'))
+        <p>{{ session()->get('message') }}</p>
+    @endif
 
 </body>
 </html>

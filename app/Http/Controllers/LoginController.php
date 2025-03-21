@@ -18,27 +18,19 @@ class LoginController extends Controller
     // Processa o login do usuário
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:6',
-        ]);
-
-        // Verifica se o email pertence ao admin
-        $admin = User::where('email', env('ADMIN_EMAIL'))->first();
-
-        if ($admin && Hash::check($request->password, $admin->password)) {
-            Auth::login($admin);
-            return redirect()->route('profile');
+       $user = User::where('email', $request->email)->first();
+       
+       if(!$user) {
+           return redirect()->back()->with('message', 'E-mail não encontrado');
         }
 
-        // Caso contrário, tenta fazer o login como usuário comum
-        if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->intended(route('profile'));
-        }
+        if(!Hash::check($request->password, $user->password)) {
+            return redirect()->back()->with('message', 'Senha não encontrado');
+        };
 
-        return back()->withErrors([
-            'email' => 'Credenciais inválidas.',
-        ]);
+        Auth::loginUsingId($user->id);
+        return redirect()->back()->with('message', 'LOGOU1');
+       
     }
 
     // Realiza o logout do usuário
