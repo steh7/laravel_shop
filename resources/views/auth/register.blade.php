@@ -8,10 +8,18 @@
 </head>
 <body>
 
+    <!-- Exibição da mensagem de sucesso -->
+    @if(session()->has('message'))
+        <div class="alert-message">
+            {{ session()->get('message') }}
+        </div>
+    @endif
+
     <!-- Formulário de Cadastro -->
     <form class="form" action="{{ route('register.store') }}" method="POST">
         @csrf
         <p class="form-title">Crie sua conta</p>
+
         <!-- Nome -->
         <div class="input-container">
             <input type="text" name="name" placeholder="Digite seu nome" required>
@@ -40,13 +48,9 @@
         <!-- Link para login caso o usuário já tenha conta -->
         <p class="signup-link">
             Já tem uma conta?
-            <a href="{{ route('login') }}">Entrar</a> <!-- Redireciona para a página de login -->
+            <a href="{{ route('login') }}">Entrar</a>
         </p>
     </form>
-
-    @if(session()->has('message'))
-        <p>{{ session()->get('message') }}</p>
-    @endif
 
 </body>
 </html>

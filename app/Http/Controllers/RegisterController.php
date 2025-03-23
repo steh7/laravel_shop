@@ -28,6 +28,6 @@ class RegisterController extends Controller
         ]);
 
         // Redireciona para a página inicial ou área restrita
-        return redirect()->back()->with('message', 'CRIADO COM SUÇEÇO');
+        return redirect()->back()->with('message', 'USUÁRIO CRIADO COM SUCESSO');
     }
 }

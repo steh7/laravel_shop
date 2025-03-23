@@ -3,39 +3,55 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f5f5f5;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-}
-
-/* Estilo do formulário */
-.form {
+  }
+  
+  /* Mensagem de sucesso */
+  .alert-message {
+    background-color: #c1fdc6; /* Verde claro */
+    color: #005701; /* Verde escuro */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+    border: 1px solid #0b6f00;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilo do formulário */
+  .form {
     background-color: #fff;
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-}
-
-/* Título do formulário */
-.form-title {
+  }
+  
+  /* Título do formulário */
+  .form-title {
     font-size: 24px;
     font-weight: 600;
     color: #333;
     text-align: center;
     margin-bottom: 20px;
-}
-
-/* Contêiner do input */
-.input-container {
+  }
+  
+  /* Contêiner do input */
+  .input-container {
     margin-bottom: 20px;
-    position: relative;
-}
-
-/* Estilo para os campos de input */
-.input-container input {
+  }
+  
+  /* Estilo para os campos de input */
+  .input-container input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -43,15 +59,15 @@ body {
     border-radius: 5px;
     box-sizing: border-box;
     outline: none;
-}
-
-/* Estilo para o foco dos campos de input */
-.input-container input:focus {
+  }
+  
+  /* Estilo para o foco dos campos de input */
+  .input-container input:focus {
     border-color: #4CAF50;
-}
-
-/* Botão de envio */
-.submit {
+  }
+  
+  /* Botão de envio */
+  .submit {
     width: 100%;
     padding: 12px;
     background-color: #4CAF50;
@@ -62,27 +78,28 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-/* Efeito de hover no botão */
-.submit:hover {
+  }
+  
+  /* Efeito de hover no botão */
+  .submit:hover {
     background-color: #45a049;
-}
-
-/* Estilo do link para redirecionar para a página de login */
-.signup-link {
+  }
+  
+  /* Estilo do link para redirecionar para a página de login */
+  .signup-link {
     text-align: center;
     font-size: 14px;
     color: #777;
-}
-
-/* Estilo do link de login */
-.signup-link a {
+  }
+  
+  /* Estilo do link de login */
+  .signup-link a {
     color: #4CAF50;
     text-decoration: none;
     font-weight: 600;
-}
-
-.signup-link a:hover {
+  }
+  
+  .signup-link a:hover {
     text-decoration: underline;
-}
+  }
+  

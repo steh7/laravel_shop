@@ -25,18 +25,19 @@ class LoginController extends Controller
         }
 
         if(!Hash::check($request->password, $user->password)) {
-            return redirect()->back()->with('message', 'Senha não encontrado');
+            return redirect()->back()->with('message', 'Senha incorreta, tente novamente');
         };
 
         Auth::loginUsingId($user->id);
-        return redirect()->back()->with('message', 'LOGOU1');
-       
+
+        // Redireciona para a página de perfil do usuário
+        return redirect()->route('profile')->with('message', 'Login bem-sucedido, bem-vindo ao seu perfil!');
     }
 
     // Realiza o logout do usuário
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect('/logout')->with('message', 'Você saiu da conta.');
     }
 }

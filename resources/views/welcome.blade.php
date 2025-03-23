@@ -17,20 +17,20 @@
         <div class="logo">NaumCompensa Store</div>
         <div class="header-content">
             <div class="search-container">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search..." />
-                <button id="searchButton" class="search-button">
+                <!-- <input type="text" id="searchInput" class="search-input" placeholder="Search..." /> -->
+                <!-- <button id="searchButton" class="search-button"> -->
                     <i class="fa-solid fa-search"></i>
                 </button>
             </div>
 
-            <button class="cta-button">Login</button>
+            <!-- <button class="cta-button">Login</button> -->
         </div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="{{ route('login') }}"><i class="fa-solid fa-home nav-icon"></i>   Login</a></li>
-            <li><a href="#"><i class="fa-solid fa-shop nav-icon"></i> Comprar</a></li>
+        <li><a href="{{ route('login') }}"><i class="fa-solid fa-user nav-icon"></i> Login</a></li>
+        <li><a href="#"><i class="fa-solid fa-shop nav-icon"></i> Comprar</a></li>
             <li><a href="#"><i class="fa-solid fa-concierge-bell nav-icon"></i> Serviços</a></li>
             <li><a href="#"><i class="fa-solid fa-info-circle nav-icon"></i> Sobre</a></li>
             <li><a href="#"><i class="fa-solid fa-envelope nav-icon"></i> Contato</a></li>
